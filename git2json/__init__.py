@@ -5,17 +5,15 @@ Generate a json log of a git repository.
 """
 
 from __future__ import print_function
+import json
+import sys
+from .parser import parse_commits
 
 __author__ = 'Tavish Armstrong'
 __email__ = 'tavisharmstrong@gmail.com'
 __version__ = '0.2.3'
 
-
-import json
-import sys
-from .parser import parse_commits
-
-#-------------------------------------------------------------------
+# -------------------------------------------------------------------
 # Main
 
 
@@ -33,7 +31,7 @@ def main():
     else:
         print(git2jsons(run_git_log(args.git_dir)))
 
-#-------------------------------------------------------------------
+# -------------------------------------------------------------------
 # Main API functions
 
 
@@ -45,7 +43,7 @@ def git2json(fil):
     return json.dumps(list(parse_commits(fil.read())), ensure_ascii=False)
 
 
-#-------------------------------------------------------------------
+# -------------------------------------------------------------------
 # Functions for interfacing with git
 
 

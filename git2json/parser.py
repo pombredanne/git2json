@@ -9,11 +9,11 @@ These parsing functions expect output of the following command:
 
 """
 
+import re
+
 __author__ = 'Tavish Armstrong'
 __email__ = 'tavisharmstrong@gmail.com'
 __version__ = '0.2.1'
-
-import re
 
 PAT_COMMIT = r'''
 (
@@ -33,7 +33,7 @@ tree\ (?P<tree>[a-f0-9]+)\n
 '''
 RE_COMMIT = re.compile(PAT_COMMIT, re.MULTILINE | re.VERBOSE)
 
-#-------------------------------------------------------------------
+# -------------------------------------------------------------------
 # Main parsing functions
 
 
@@ -80,7 +80,7 @@ def parse_commit(parts):
     return commit
 
 
-#-------------------------------------------------------------------
+# -------------------------------------------------------------------
 # Parsing helper functions
 
 
